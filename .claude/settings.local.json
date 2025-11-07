@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(tree:*)",
+      "Bash(npm install:*)",
+      "Bash(cat:*)",
+      "Bash(git diff:*)",
+      "Bash(python:*)",
+      "Bash(del package-lock.json)",
+      "Bash(rm:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
