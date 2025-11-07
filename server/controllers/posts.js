@@ -19,11 +19,7 @@ export const createPost = async (req, res) => {
     });
     await newPost.save();
 
-<<<<<<< HEAD
     const post = await Post.find().sort({ createdAt: -1 });
-=======
-    const post = await Post.find();
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
     res.status(201).json(post);
   } catch (err) {
     res.status(409).json({ message: err.message });
@@ -33,11 +29,7 @@ export const createPost = async (req, res) => {
 /* READ */
 export const getFeedPosts = async (req, res) => {
   try {
-<<<<<<< HEAD
     const post = await Post.find().sort({ createdAt: -1 });
-=======
-    const post = await Post.find();
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
     res.status(200).json(post);
   } catch (err) {
     res.status(404).json({ message: err.message });
@@ -47,11 +39,7 @@ export const getFeedPosts = async (req, res) => {
 export const getUserPosts = async (req, res) => {
   try {
     const { userId } = req.params;
-<<<<<<< HEAD
     const post = await Post.find({ userId }).sort({ createdAt: -1 });
-=======
-    const post = await Post.find({ userId });
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
     res.status(200).json(post);
   } catch (err) {
     res.status(404).json({ message: err.message });

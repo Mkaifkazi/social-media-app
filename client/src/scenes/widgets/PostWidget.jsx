@@ -3,7 +3,6 @@ import {
   FavoriteBorderOutlined,
   FavoriteOutlined,
   ShareOutlined,
-<<<<<<< HEAD
   MoreVert,
 } from "@mui/icons-material";
 import {
@@ -26,17 +25,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 import { motion, AnimatePresence } from "framer-motion";
 import { formatDistanceToNow } from "date-fns";
-=======
-} from "@mui/icons-material";
-import { Box, Divider, IconButton, Typography, useTheme } from "@mui/material";
-import { serverUrl } from "Constants";
-import FlexBetween from "components/FlexBetween";
-import Friend from "components/Friend";
-import WidgetWrapper from "components/WidgetWrapper";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setPost } from "state";
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
 
 const PostWidget = ({
   postId,
@@ -48,7 +36,6 @@ const PostWidget = ({
   userPicturePath,
   likes,
   comments,
-<<<<<<< HEAD
   createdAt,
 }) => {
   const [isComments, setIsComments] = useState(false);
@@ -67,21 +54,6 @@ const PostWidget = ({
     setIsLiked(true);
     setTimeout(() => setIsLiked(false), 600);
 
-=======
-}) => {
-  const [isComments, setIsComments] = useState(false);
-  const dispatch = useDispatch();
-  const token = useSelector((state) => state.token);
-  const loggedInUserId = useSelector((state) => state.user._id);
-  const isLiked = Boolean(likes[loggedInUserId]);
-  const likeCount = Object.keys(likes).length;
-
-  const { palette } = useTheme();
-  const main = palette.neutral.main;
-  const primary = palette.primary.main;
-
-  const patchLike = async () => {
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
     const response = await fetch(`${serverUrl}/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
@@ -95,7 +67,6 @@ const PostWidget = ({
   };
 
   return (
-<<<<<<< HEAD
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -287,66 +258,6 @@ const PostWidget = ({
         </CardActions>
       </Card>
     </motion.div>
-=======
-    <WidgetWrapper m="2rem 0">
-      <Friend
-        friendId={postUserId}
-        name={name}
-        subtitle={location}
-        userPicturePath={userPicturePath}
-      />
-      <Typography color={main} sx={{ mt: "1rem" }}>
-        {description}
-      </Typography>
-      {picturePath && (
-        <img
-          width="100%"
-          height="auto"
-          alt="post"
-          style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`${serverUrl}/assets/${picturePath}`}
-        />
-      )}
-      <FlexBetween mt="0.25rem">
-        <FlexBetween gap="1rem">
-          <FlexBetween gap="0.3rem">
-            <IconButton onClick={patchLike}>
-              {isLiked ? (
-                <FavoriteOutlined sx={{ color: primary }} />
-              ) : (
-                <FavoriteBorderOutlined />
-              )}
-            </IconButton>
-            <Typography>{likeCount}</Typography>
-          </FlexBetween>
-
-          <FlexBetween gap="0.3rem">
-            <IconButton onClick={() => setIsComments(!isComments)}>
-              <ChatBubbleOutlineOutlined />
-            </IconButton>
-            <Typography>{comments.length}</Typography>
-          </FlexBetween>
-        </FlexBetween>
-
-        <IconButton>
-          <ShareOutlined />
-        </IconButton>
-      </FlexBetween>
-      {isComments && (
-        <Box mt="0.5rem">
-          {comments.map((comment, i) => (
-            <Box key={`${name}-${i}`}>
-              <Divider />
-              <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
-                {comment}
-              </Typography>
-            </Box>
-          ))}
-          <Divider />
-        </Box>
-      )}
-    </WidgetWrapper>
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
   );
 };
 

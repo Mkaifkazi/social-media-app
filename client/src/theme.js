@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Modern color design tokens
 export const colorTokens = {
   grey: {
@@ -58,47 +57,12 @@ export const colorTokens = {
 };
 
 // Modern MUI theme settings with glassmorphism support
-=======
-// color design tokens export
-export const colorTokens = {
-  grey: {
-    0: "#FFFFFF",
-    10: "#F6F6F6",
-    50: "#F0F0F0",
-    100: "#E0E0E0",
-    200: "#C2C2C2",
-    300: "#A3A3A3",
-    400: "#858585",
-    500: "#666666",
-    600: "#4D4D4D",
-    700: "#333333",
-    800: "#1A1A1A",
-    900: "#0A0A0A",
-    1000: "#000000",
-  },
-  primary: {
-    50: "#E6FBFF",
-    100: "#CCF7FE",
-    200: "#99EEFD",
-    300: "#66E6FC",
-    400: "#33DDFB",
-    500: "#00D5FA",
-    600: "#00A0BC",
-    700: "#006B7D",
-    800: "#00353F",
-    900: "#001519",
-  },
-};
-
-// mui theme settings
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
 export const themeSettings = (mode) => {
   return {
     palette: {
       mode: mode,
       ...(mode === "dark"
         ? {
-<<<<<<< HEAD
             // Dark mode - sophisticated and elegant
             primary: {
               dark: colorTokens.primary[300],
@@ -115,24 +79,10 @@ export const themeSettings = (mode) => {
               main: colorTokens.grey[300],
               mediumMain: colorTokens.grey[400],
               medium: colorTokens.grey[500],
-=======
-            // palette values for dark mode
-            primary: {
-              dark: colorTokens.primary[200],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
-            },
-            neutral: {
-              dark: colorTokens.grey[100],
-              main: colorTokens.grey[200],
-              mediumMain: colorTokens.grey[300],
-              medium: colorTokens.grey[400],
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
               light: colorTokens.grey[700],
             },
             background: {
               default: colorTokens.grey[900],
-<<<<<<< HEAD
               paper: colorTokens.grey[800],
               alt: colorTokens.grey[800],
             },
@@ -151,17 +101,6 @@ export const themeSettings = (mode) => {
               dark: colorTokens.accent[700],
               main: colorTokens.accent[600],
               light: colorTokens.accent[100],
-=======
-              alt: colorTokens.grey[800],
-            },
-          }
-        : {
-            // palette values for light mode
-            primary: {
-              dark: colorTokens.primary[700],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[50],
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
             },
             neutral: {
               dark: colorTokens.grey[700],
@@ -172,7 +111,6 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: colorTokens.grey[10],
-<<<<<<< HEAD
               paper: colorTokens.grey[0],
               alt: colorTokens.grey[0],
             },
@@ -325,38 +263,6 @@ export const themeSettings = (mode) => {
             },
           },
         },
-=======
-              alt: colorTokens.grey[0],
-            },
-          }),
-    },
-    typography: {
-      fontFamily: ["Rubik", "sans-serif"].join(","),
-      fontSize: 12,
-      h1: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
-        fontSize: 40,
-      },
-      h2: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
-        fontSize: 32,
-      },
-      h3: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
-        fontSize: 24,
-      },
-      h4: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
-        fontSize: 20,
-      },
-      h5: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
-        fontSize: 16,
-      },
-      h6: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
-        fontSize: 14,
->>>>>>> 7b8c6a1d2ac3344ae4d89c14395ee93afd4e6b31
       },
     },
   };
